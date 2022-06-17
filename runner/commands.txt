@@ -1,0 +1,9 @@
+docker run -p 9000:8080 -p 9229:9229 -v "$(pwd)"/app:/usr/src/app/app node-app
+
+curl -XPOST "http://localhost:9000" -H 'Content-Type: application/json' -d '{"name":"y???y","solution": "exports.method=(p)=>`${p}haha${p}`"}'
+
+
+
+docker build -f Dockerfile.lambda -t runner.lambda .
+docker run -p 9000:8080 runner.lambda 
+curl -XPOST "http://localhost:9000/2015-03-31/functions/function/invocations" -H 'Content-Type: application/json' -d '{"name":"y???y","solution": "exports.method=()=>{};exports.add=(x,y,z)=>x+y+z+1;"}'

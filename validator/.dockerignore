@@ -1,0 +1,6 @@
+.git
+.gitignore
+commands.txt
+node_modules
+npm-debug.log
+app/tmp/

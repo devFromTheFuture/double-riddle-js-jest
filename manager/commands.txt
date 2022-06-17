@@ -1,0 +1,5 @@
+//docker run -p 9100:8080 -p 9329:9229 -v "$(pwd)"/app:/usr/src/app/app node-app
+
+
+curl -XPOST "http://localhost:9002" -H 'Content-Type: application/json' -d '{"name":"y???y","solution": "exports.method=()=>{};exports.add=(x,y,z)=>x+y+z+1;"}' | jq
+curl -XPOST "http://localhost:9002" -H 'Content-Type: application/json' -d '{"name":"y???y","solution": "exports.method=()=>{};exports.add=(x,y,z)=>x+y+z;"}' | jq

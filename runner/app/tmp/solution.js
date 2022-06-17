@@ -1,0 +1,1 @@
+exports.method=()=>{};exports.add=(x,y,z)=>x+y+z;

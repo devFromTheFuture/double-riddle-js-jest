@@ -1,0 +1,5 @@
+docker run -p 9100:8080 -p 9329:9229 -v "$(pwd)"/app:/usr/src/app/app node-app
+
+
+ERRORS - why not saving this value to the file ??!!
+curl -XPOST "http://localhost:9000/2015-03-31/functions/function/invocations" -H 'Content-Type: application/json' -d '{"name":"y???y","solutionObj": {"roarX":"this is solution object","s.add(1,2,3)":8,"s.add(1,1,1)":3,"s.add(2,3,4)":111,"s.add(5,5,5)":151x}}'

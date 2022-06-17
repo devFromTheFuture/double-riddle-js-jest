@@ -1,0 +1,1 @@
+exports.solutionObject = {"roarX":"this is solution object","s.doSomething1":"xxxx","s.add(1,2,3)":6,"s.add(1,1,1)":3,"s.add(2,3,4)":9,"s.add(5,5,5)":15}

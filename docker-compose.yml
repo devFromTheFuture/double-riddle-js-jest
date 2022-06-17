@@ -1,0 +1,32 @@
+version: "3.7"
+
+services:
+  
+  app-runner:
+    image: node-app
+    #command: sh -c "yarn install && yarn start-server"
+    ports:
+      - 9000:8080
+      - 9229:9229
+    working_dir: /usr/src/app
+    volumes:
+      - ./runner/app:/usr/src/app/app
+  
+  app-validator:
+    image: double-validator
+    #command: sh -c "yarn install && yarn start-client"
+    ports:
+      - 9001:8080
+      - 9329:9229
+    working_dir: /usr/src/app
+    volumes:
+      - ./validator/app:/usr/src/app/app
+  
+  manager:
+    image: double-manager
+    ports:
+      - 9002:8080
+      - 9429:9229
+    working_dir: /usr/src/app
+    volumes:
+      - ./manager/app:/usr/src/app/app
