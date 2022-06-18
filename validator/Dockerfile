@@ -1,18 +1,12 @@
-FROM node:16
-WORKDIR /usr/src/app
-
-# Install app dependencies
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
-# where available (npm@5+)
+FROM amazon/aws-lambda-nodejs:16
 COPY package*.json ./
-
 RUN npm install
-# If you are building your code for production
-# RUN npm ci --only=production
 
-# Bundle app source
 COPY . .
 
-#EXPOSE 8080
+#WORKDIR /var/task/app
 
-CMD ["npm", "run", "start-server-debug" ]
+#RUN yum -y install tar gzip && yum -y clean all  && rm -rf /var/cache
+
+ENV TMP_DIR=/tmp
+CMD [ "./app/app.lambdaHandler" ]
