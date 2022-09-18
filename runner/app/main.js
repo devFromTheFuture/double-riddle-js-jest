@@ -31,7 +31,9 @@ const main = async ( event = {}) => {
     console.log(testApp);
     const solutionObj = await testApp();
 
-    return solutionObj;
+    return {
+        solutionObj
+    };
 
     
 }
