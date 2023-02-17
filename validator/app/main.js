@@ -19,7 +19,7 @@ const createSolutionObject = function(content) {
 
 const main = async (event = {}) => {
 
-    const solutionObj = event.solutionObj;
+    const solutionObj = event.solutionObj || (event.responsePayload && event.responsePayload.solutionObj);
 
     if (!solutionObj) {
         throw("no solution object");
